@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
+import Header from './header'
+import Submit from './submit'
+import About from './about'
+import Content from './content'
 
 class App extends Component {
 
-  constructor (props) {
-    super(props)
-  }
+
 
   render () {
-    return <h1>Welcome to {this.props.name}</h1>
+    return (
+    	<div>
+	    	<Header />
+	    	<About />
+	    	<Submit />
+	    	<Content />
+    	</div>
+    )
   }
 
 }
