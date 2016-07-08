@@ -1,0 +1,48 @@
+import dbconfig from './knexfile.js'
+import Knex from 'knex'
+import env from 'dotenv'
+var knex = Knex(dbconfig["development"])
+
+var cmd = process.argv[2]
+var note = process.argv[3]
+
+switch (cmd) {
+  case 'add':
+    addTodo(note)
+      .then(getAll)
+      .then(listTodos)
+      .catch(logError)
+      .finally(closeDB)
+    break
+
+  case 'list':
+    getAll()
+      .then(listTodos)
+      .catch(logError)
+      .finally(closeDB)
+    break
+
+  default:
+    console.log('no matched cases')
+    closeDB()
+    break
+}
+
+function listTodos (haikus) {
+  haikus.rows.forEach(function (haiku) { console.log(haiku.title) })
+}
+
+function logError (err) {
+  console.log('Dang, we exploded like a bomb: ', err)
+}
+function getAll () {
+  return knex.raw('SELECT * FROM "haiku"')
+}
+
+function addTodo (task) {
+  return knex.raw('insert into "haiku" ("task") values ("' + task + '" );')
+}
+
+function closeDB () {
+  knex.destroy()
+}
