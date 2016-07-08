@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/miles-fitzsimons/haiku",
   "dependencies": {
+    "knex": "^0.11.7",
+    "pg": "^6.0.1",
     "retext": "^3.0.0",
     "retext-syllable": "^1.0.0",
     "unist-util-inspect": "^4.0.0"
