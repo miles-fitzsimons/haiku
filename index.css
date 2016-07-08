@@ -5,3 +5,11 @@ main {
 * {
 	border: red solid 1px;
 }
+
+.incorrectCount {
+	color: red;
+}
+
+.correctCount {
+	color: green;
+}
