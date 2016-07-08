@@ -3,27 +3,24 @@ import React, { Component } from 'react'
 class About extends Component {
 	constructor(props) {
 		super(props)
-		this.state = {image: "../smile.jpg", i: 0}
+		this.state = {image: "../images/01-haiku-master-clickme.png", i: 0}
 	}
 
 
 	handleClick() {
 		if (this.state.i === 0) 
 		{
-			this.setState({image: "../neutral.jpg", i: 1})
+			this.setState({image: "../images/01-haiku-master-clickme.png", i: 1})
 		}
 		else {
-			this.setState({image: "../smile.jpg", i: 0})
+			this.setState({image: "../images/02-haiku-master.png", i: 0})
 		}
 	}
 
 	render() {
 		return (
 			<div>
-			<img src={this.state.image} onClick={this.handleClick.bind(this)} />
-			<p >
-			Haiku: (HI-KOO) A silly poem from Japan with an arbitrary number of syllables
-			</p>
+				<img src={this.state.image} onClick={this.handleClick.bind(this)} />
 			</div>
 			)
 	}
