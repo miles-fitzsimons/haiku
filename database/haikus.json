@@ -1,0 +1,44 @@
+{
+    "haikus": [
+                {
+                    "id": 1,
+                    "title": "ReactFacts",
+                    "first_line": "States and props react",
+                    "second_line": "That's a fact, when my code's hacked",
+                    "third_line": "Chuck props, the mic drops",
+                    "author": "M++",
+                },
+                {
+                    "id": 2,
+                    "title": "Reacty",
+                    "first_line": "React just like that",
+                    "second_line": "Facebook upping the dev game",
+                    "third_line": "Don't forget the wrap",
+                    "author": "M++",
+                },
+                {
+                    "id": 3,
+                    "title": "Shoes for the Sole",
+                    "first_line": "Twenty dollars gone",
+                    "second_line": "Treat my feet to mahabi",
+                    "third_line": "Its good for the sole",
+                    "author": "Kristy",
+                },
+                {
+                    "id": 4,
+                    "title": "Hello",
+                    "first_line": "States and props what",
+                    "second_line": "That's a fact, is my code's hacked",
+                    "third_line": "Chuck props, the mic drops",
+                    "author": "M++",
+                },
+                {
+                    "id": 5,
+                    "title": "Yolo",
+                    "first_line": "Yoyo just like that",
+                    "second_line": "Twitter upping the dev game",
+                    "third_line": "Don't forget the wrap",
+                    "author": "Georgie",
+                }
+    ]
+}
