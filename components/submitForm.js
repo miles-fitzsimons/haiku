@@ -13,6 +13,8 @@ class SubmitForm extends Component {
 				class1: 'incorrectCount',
 				class2: 'incorrectCount',
 				class3: 'incorrectCount',
+				title: '',
+				author: '',
 				line1: '',
 				line2: '',
 				line3: ''
@@ -57,28 +59,38 @@ class SubmitForm extends Component {
 			}
 	}
 
+	getOthers(e) {
+		var input = e.target.value
+		var name = e.target.name
+		this.setState({[name]: input})
+	}
+
 	submitHaiku(s) {
-		// console.log("what is this?", s)
-		console.log('AAA', this.state)
+		var obj = {}
+		obj.title = this.state.title
+		obj.author = this.state.author
+		obj.first_line = this.state.line1
+		obj.second_line = this.state.line2
+		obj.third_line = this.state.line3
+		data.haikus.unshift(obj)
+		console.log("here be data", data)
 	}
 
 	render() {
 		return (
 			<div id="wrapform">
 				<div id='submit-haiku'>
-					<input type="text" placeholder="Title" className=
-					"nameInput"/><br/><br/>
-					<input type="text" placeholder="Author" className=
-					"nameInput"/><br/><br/>
-
+					<input type="text" name="title" placeholder="Title" className="nameInput" onBlur={this.getOthers.bind(this)} /><br/><br/>
+					<input type="text" name="author" placeholder="Author" className="nameInput" onBlur={this.getOthers.bind(this)} /><br/><br/>
 					<span className={this.state.class1}><input className=
 					"textInput" name="1" type="text" placeholder="5 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count1} syllables</span><br/><br/>
 					<span className={this.state.class2}><input className=
 					"textInput" name="2" type="text" placeholder="7 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count2} syllables</span><br/><br/>
 					<span className={this.state.class3}><input className=
 					"textInput" name="3" type="text" placeholder="5 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count3} syllables</span><br/><br/>
+
 				</div>
-				<button id="submitButton" onClick={this.submitHaiku.bind(this)}>Submit</button>
+					<button id="submitButton" onClick={this.submitHaiku.bind(this)}>Submit</button>
 			</div>
 
 		)
