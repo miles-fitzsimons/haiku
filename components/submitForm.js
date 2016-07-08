@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import getSyllables from '../lib/getSyllables'
+import data from '../database/haikus.json'
+
 
 class SubmitForm extends Component {
 		constructor (props) {
@@ -10,7 +12,10 @@ class SubmitForm extends Component {
 				count3: 0,
 				class1: 'incorrectCount',
 				class2: 'incorrectCount',
-				class3: 'incorrectCount'
+				class3: 'incorrectCount',
+				line1: '',
+				line2: '',
+				line3: ''
 			}
 	}
 
@@ -18,6 +23,7 @@ class SubmitForm extends Component {
 		var name = e.target.name
 		var idCount = 'count' + name
 		var idClass = 'class' + name
+		var idLine = 'line' + name
 		var currentLine = e.target.value
 		var t = this
 		var correctCount
@@ -30,7 +36,10 @@ class SubmitForm extends Component {
 		getSyllables(currentLine)
 			.then(function(res) {
 				if(res === correctCount) {
-					t.setState({[idClass]: 'correctCount'})
+					t.setState({
+						[idClass]: 'correctCount',
+						[idLine]: currentLine
+					})
 				}
 				else {
 					t.setState({[idClass]: 'incorrectCount'})
@@ -48,16 +57,24 @@ class SubmitForm extends Component {
 			}
 	}
 
+	submitHaiku(s) {
+		// console.log("what is this?", s)
+		console.log('AAA', this.state)
+	}
+
 	render() {
 		return (
 			<div>
 				<input type="text" placeholder="Title" /><br/><br/>
 				<input type="text" placeholder="Author" /><br/><br/>
-				<span className={this.state.class1}><input name="1" type="text" placeholder="5 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count1} syllables</span><br/><br/>
-				<span className={this.state.class2}><input name="2" type="text" placeholder="7 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count2} syllables</span><br/><br/>
-				<span className={this.state.class3}><input name="3" type="text" placeholder="5 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count3} syllables</span><br/><br/>
+				<span className={this.state.class1}><input className=
+				"textInput" name="1" type="text" placeholder="5 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count1} syllables</span><br/><br/>
+				<span className={this.state.class2}><input className=
+				"textInput" name="2" type="text" placeholder="7 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count2} syllables</span><br/><br/>
+				<span className={this.state.class3}><input className=
+				"textInput" name="3" type="text" placeholder="5 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count3} syllables</span><br/><br/>
 				
-				<button id="submitButton" disabled>Submit</button>
+				<button id="submitButton" onClick={this.submitHaiku.bind(this)}>Submit</button> 
 			</div>
 		)
 	}
@@ -65,3 +82,5 @@ class SubmitForm extends Component {
 }
 
 export default SubmitForm
+
+//remember to put the disabled value back

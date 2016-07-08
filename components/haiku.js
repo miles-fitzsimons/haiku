@@ -8,10 +8,11 @@ class Haiku extends Component {
 	render() {
 		return (
 			<div>
-				<h3>Title, Author</h3>
-				<p>Line 1</p>
-				<p>Line 2</p>
-				<p>Line 3</p>
+				<h3>{this.props.title}</h3>
+				<h3>{this.props.author}</h3>
+				<p>{this.props.line1}</p>
+				<p>{this.props.line2}</p>
+				<p>{this.props.line3}</p>
 			</div>
 			)
 	}
