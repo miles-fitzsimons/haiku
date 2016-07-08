@@ -5,3 +5,19 @@ main {
 * {
 	border: red solid 1px;
 }
+
+body {
+    background: url('/images/01-background.png');
+    background-size: 25em;
+    font-family: 'Julee', cursive;
+}
+
+.inputText {
+    width: 35em;
+    height: 40px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+
