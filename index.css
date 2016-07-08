@@ -2,22 +2,72 @@ main {
   text-align: center;
 }
 
-* {
+/** {
 	border: red solid 1px;
 }
-
+*/
 body {
     background: url('/images/01-background.png');
     background-size: 25em;
     font-family: 'Julee', cursive;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
 }
 
-.inputText {
+#submit-haiku {
+    text-align: left;
+}
+
+.nameInput {
     width: 35em;
     height: 40px;
     text-align: center;
     font-size: 14px;
     border-radius: 10px;
+    border: 0;
 }
 
+.textInput {
+    width: 35em;
+    height: 40px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 0;
+}
 
+.incorrectCount {
+	color: red;
+}
+
+.correctCount {
+	color: green;
+}
+
+#submitButton {
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+}
+
+#wrapper {
+    padding: 50px;
+    background-color: rgba(225, 225, 225, 0.5);
+}
+
+#entry {
+    margin: 40px;
+}
+
+#entry h3 {
+    font-size: 30px
+}
+
+#entry h2 {
+    font-size: 30px
+    margin-bottom: 0;
+}
