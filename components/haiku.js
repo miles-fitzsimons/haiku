@@ -7,9 +7,8 @@ class Haiku extends Component {
 
 	render() {
 		return (
-			<div>
-				<h3>{this.props.title}</h3>
-				<h3>{this.props.author}</h3>
+			<div id='entry'>
+				<h3>{this.props.title} by {this.props.author}</h3>
 				<p>{this.props.line1}</p>
 				<p>{this.props.line2}</p>
 				<p>{this.props.line3}</p>

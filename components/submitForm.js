@@ -78,18 +78,21 @@ class SubmitForm extends Component {
 
 	render() {
 		return (
-			<div>
-				<input type="text" name="title" placeholder="Title" onBlur={this.getOthers.bind(this)} /><br/><br/>
-				<input type="text" name="author" placeholder="Author" onBlur={this.getOthers.bind(this)} /><br/><br/>
-				<span className={this.state.class1}><input className=
-				"textInput" name="1" type="text" placeholder="5 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count1} syllables</span><br/><br/>
-				<span className={this.state.class2}><input className=
-				"textInput" name="2" type="text" placeholder="7 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count2} syllables</span><br/><br/>
-				<span className={this.state.class3}><input className=
-				"textInput" name="3" type="text" placeholder="5 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count3} syllables</span><br/><br/>
-				
-				<button id="submitButton" onClick={this.submitHaiku.bind(this)}>Submit</button> 
+			<div id="wrapform">
+				<div id='submit-haiku'>
+					<input type="text" name="title" placeholder="Title" className="nameInput" onBlur={this.getOthers.bind(this)} /><br/><br/>
+					<input type="text" name="author" placeholder="Author" className="nameInput" onBlur={this.getOthers.bind(this)} /><br/><br/>
+					<span className={this.state.class1}><input className=
+					"textInput" name="1" type="text" placeholder="5 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count1} syllables</span><br/><br/>
+					<span className={this.state.class2}><input className=
+					"textInput" name="2" type="text" placeholder="7 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count2} syllables</span><br/><br/>
+					<span className={this.state.class3}><input className=
+					"textInput" name="3" type="text" placeholder="5 syllables" onChange={this.handleChange.bind(this)} /> {this.state.count3} syllables</span><br/><br/>
+
+				</div>
+					<button id="submitButton" onClick={this.submitHaiku.bind(this)}>Submit</button>
 			</div>
+
 		)
 	}
 

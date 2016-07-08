@@ -6,7 +6,7 @@ class Submit extends Component {
 	constructor (props) {
 	  super(props)
 	  	this.state = {
-	  		showSubmit: true
+	  		showSubmit: false
 	  	}
 	}
 
