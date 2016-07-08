@@ -46,7 +46,6 @@ class SubmitForm extends Component {
 			else {
 				document.getElementById('submitButton').disabled = true
 			}
-			console.log('AA', this.state)
 	}
 
 	render() {
