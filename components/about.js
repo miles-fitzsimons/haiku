@@ -11,11 +11,9 @@ class About extends Component {
 		if (this.state.i === 0) 
 		{
 			this.setState({image: "../neutral.jpg", i: 1})
-			console.log('CLICK', this.state.i)
 		}
 		else {
 			this.setState({image: "../smile.jpg", i: 0})
-			console.log('CLICK', this.state.i)
 		}
 	}
 
@@ -23,7 +21,6 @@ class About extends Component {
 		return (
 			<div>
 			<img src={this.state.image} onClick={this.handleClick.bind(this)} />
-
 			<p >
 			Haiku: (HI-KOO) A silly poem from Japan with an arbitrary number of syllables
 			</p>
